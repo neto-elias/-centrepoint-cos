@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#020402">
+<title>Centrepoint COS</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="shell">
+<header class="top">
+  <h1>CENTREPOINT OPERATING SYSTEM</h1>
+  <div>K518 // COUNCIL GOVERNANCE TERMINAL // v0.5</div>
+</header>
+<noscript><div class="warn">JavaScript is off. Menus still open, but saving/search will not work.</div></noscript>
+<main id="app">
+<section class="screen active" id="home">
+  <p class="gold">MAIN MENU</p>
+  <div class="stats">
+    <div>ACTIVE PROJECTS <b id="statProjects">--</b></div>
+    <div>PENDING MOTIONS <b id="statMotions">--</b></div>
+    <div>OPEN TASKS <b id="statTasks">--</b></div>
+  </div>
+  <button data-screen="projects">1 PROJECTS</button>
+  <button data-screen="motions">2 MOTIONS</button>
+  <button data-screen="tasks">3 TASKS</button>
+  <button data-screen="meetings">4 MEETINGS</button>
+  <button data-screen="financials">5 FINANCIALS</button>
+  <button data-screen="documents">6 DOCUMENTS</button>
+  <button data-screen="contractors">7 CONTRACTORS</button>
+  <button data-screen="search">8 SEARCH</button>
+  <button data-screen="settings">9 EXPORT / IMPORT</button>
+</section>
+<section class="screen" id="projects"><h2>PROJECTS</h2><div id="projectsList"></div><button onclick="addItem('projects')">A ADD PROJECT</button><button data-screen="home">0 BACK</button></section>
+<section class="screen" id="motions"><h2>MOTIONS</h2><div id="motionsList"></div><button onclick="addItem('motions')">A ADD MOTION</button><button data-screen="home">0 BACK</button></section>
+<section class="screen" id="tasks"><h2>TASKS</h2><div id="tasksList"></div><button onclick="addItem('tasks')">A ADD TASK</button><button data-screen="home">0 BACK</button></section>
+<section class="screen" id="meetings"><h2>MEETINGS</h2><div id="meetingsList"></div><button onclick="addItem('meetings')">A ADD MEETING</button><button data-screen="home">0 BACK</button></section>
+<section class="screen" id="financials"><h2>FINANCIAL SNAPSHOT</h2><div class="card"><b>March 31, 2026</b><br>Operating cash: $13,411.85<br>Net CRF assets: $96,173.54<br>Accounts payable: $52,825.08<br>Special levy bank: $0.00<br><span class="dim">Manual snapshot. Later this can be updated from monthly PDFs.</span></div><div id="financialsList"></div><button onclick="addItem('financials')">A ADD FINANCIAL NOTE</button><button data-screen="home">0 BACK</button></section>
+<section class="screen" id="documents"><h2>DOCUMENTS</h2><div class="card">00 Governance<br>01 Minutes<br>02 Financials<br>03 Banking<br>04 Insurance<br>05 CRF and Special Levies<br>06 Contracts<br>07 Projects<br>08 Maintenance<br>09 Owner Communications<br>10 Legal and Privacy<br>11 Engineering and Depreciation<br>12 Vendors</div><div id="documentsList"></div><button onclick="addItem('documents')">A ADD DOCUMENT NOTE</button><button data-screen="home">0 BACK</button></section>
+<section class="screen" id="contractors"><h2>CONTRACTORS</h2><div id="contractorsList"></div><button onclick="addItem('contractors')">A ADD CONTRACTOR</button><button data-screen="home">0 BACK</button></section>
+<section class="screen" id="search"><h2>SEARCH</h2><input id="searchBox" placeholder="type stairs, boiler, portal..." oninput="runSearch()"><div id="searchResults"></div><button data-screen="home">0 BACK</button></section>
+<section class="screen" id="settings"><h2>EXPORT / IMPORT</h2><p class="dim">Use this before updates so your browser data is not lost.</p><button onclick="exportData()">EXPORT DATA</button><textarea id="importBox" placeholder="Paste exported data here"></textarea><button onclick="importData()">IMPORT DATA</button><button onclick="resetData()">RESET DEMO DATA</button><button data-screen="home">0 BACK</button></section>
+</main>
+<footer>Command: tap menu item // Data: stored locally on this device</footer>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>
